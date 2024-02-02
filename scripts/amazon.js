@@ -61,6 +61,12 @@ document.querySelectorAll('.js-add-to-cart')
                 quantity:1
             })
         }
+        let sum = 0
+        cart.forEach((item)=>{
+            sum += item.quantity
+        })
         console.log(cart)
+        console.log(sum)
+        document.querySelector('.js-cart-quantity').innerHTML = sum
     })
 })
