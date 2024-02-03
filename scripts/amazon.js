@@ -42,7 +42,7 @@ products.forEach((product)=>{
 // console.log(productsHTML)
 document.querySelector('.js-products-grid')
 .innerHTML = productsHTML;
-
+import {cart} from '../data/cart.js'
 document.querySelectorAll('.js-add-to-cart')
 .forEach((button)=>{
     button.addEventListener('click',()=>{
