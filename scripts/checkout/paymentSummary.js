@@ -13,15 +13,15 @@ export function renderPaymentSummary(){
       const deliverOption = getDeliveryOption(cartItem.deliveryOptionId)
       shippingPriceCents += deliverOption.priceCents
     });
-    console.log(productPriceCents)
-    console.log(shippingPriceCents)
+    // console.log(productPriceCents)
+    // console.log(shippingPriceCents)
 
     const totalBeforeTaxCents = productPriceCents + shippingPriceCents
     const taxCents = totalBeforeTaxCents * 0.1
     const totalCents = totalBeforeTaxCents + taxCents
 
     const quantity = getQuantity()
-    console.log("quantity: " + quantity)
+    // console.log("quantity: " + quantity)
     const paymentSummaryHTML = 
     `
         <div class="payment-summary-title">
@@ -68,4 +68,8 @@ export function renderPaymentSummary(){
         </button>
     `
     document.querySelector('.js-payment-summary').innerHTML = paymentSummaryHTML
+
+    const cartSummaryTitleHtml = `${quantity} item(s)`
+    
+    document.querySelector('.js-cart-summary-title').innerHTML = cartSummaryTitleHtml
 }
